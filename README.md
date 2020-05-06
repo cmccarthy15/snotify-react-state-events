@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Snotify Events & State Lab!
+Welcome to S-not-ify! It's like Spotify... but it's not. In this lab we're getting into events and state in React. After the core labs on Learn, you should be able to complete these core deliverables if you have a solid grasp of how events and state work in React. If it's tough at first *do not despair*. Choosing where state should live, creating event handlers in the right location, and passing information to the right place and invoking methods in the right places is *really hard at first*. The more practice you get, the faster you'll feel confident in your skills. 
 
-## Available Scripts
+In this app, you'll need to load songs from a json-server when a button in the Navbar is clicked and then use state and events to build a lot of other core functionality. 
 
-In the project directory, you can run:
+As with all applications, start first with what the feature is or what you want the user experience to be. Then determine what is needed to actually create that behavior in code. Start first with your end user and you'll build a better product. 
 
-### `yarn start`
+Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![alt text][core_image]
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[core_image]: ./public/SnotifyCore.gif "Core Deliverables"
 
-### `yarn test`
+## Skills and Concepts to Practice
+- Functional v. Class Component notation
+- Creating state using ES6 syntax and/or constructor syntax
+- Choosing where to locate state and passing that data down to child components
+- Updating state correctly using setState
+- Creating methods to setState and invoking those methods in other components
+- Using event handler methods to respond to user interaction 
+- Function references v. invocations for event handlers
+- ES6 Arrow functions and binding 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
+After cloning down the project:
+- Run `git branch -b yourname` in your terminal to create your own branch
+- Run `npm install` in your terminal
+- Run `npm start` and a JSON server will spin up a mock back-end API and you can access the data at `http://localhost:6001/songs`. Your react application will also start, on port `6002`. The response should contain an array of objects that are structured as follows:
+```
+[{
+"id": 1,
+"title": "Formation",
+"artist": "Beyonce",
+"url": "https://www.youtube.com/embed/WDZJPJV__bQ",
+"genre": "Hip Hop",
+"favorite": false
+},{
+"id": 2,
+"title": "This is America",
+"artist": "Childish Gambino",
+"url": "https://www.youtube.com/embed/VYOjWnS4cMY",
+"genre": "Hip Hop",
+"favorite": false
+},{
+"id": 3,
+"title": "Changes",
+"artist": "2Pac ft Talent",
+"url": "https://www.youtube.com/embed/eXvBjCO19QY",
+"genre": "Hip Hop",
+"favorite": false
+}]
+```
+- Remember to `git add .` then `git commit -m "helpful message"` and `git push` when you're done or before lecture. 
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What You Already Have
+### Components
+- `App`: the top of your application that renders `NavBar` and `MainContainer` components
+- `Navbar`: renders the app name, our button to get all of our info from the json-server and a search bar.
+- `MainContainer`: renders underneath the `Navbar` and contains a `Filter` component, `SongList` component and `Queue` component
+- `Filter`:
+- `SongList`:
+- `Queue`:
+- `SongItem`:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Additional Files
+- `db.json` stores the data for our json-server. Check it out to make sure you know the format of the data.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deliverables 
+### Core Deliverables
+High level, you have to decide where state needs to live, create methods to update state, and pass those methods to where they eventually need to be invoked. Very little guidance is provided purposefully to make you think about where state should live. 
+- Fetch all songs successfully from the backend when the `Get Songs` button is clicked
+- Render all songs in the `SongList`
+- When the heart is clicked on a given song in the `SongList`, toggle its favorite value. This should persist to the backend so when the page refreshes it is still (not) a favorite. Hint: remember a little thing called a `PATCH` request?
+- When `Liked` is clicked on a given song in the `SongList`, its like count should increase. This *DOES NOT* need to persist to the backend. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Advanced Deliverables
+If you get through all of the Core Deliverables, try your hand at the Advanced ones. Check out the gif below for how it should look. 
+- When `Play Now`is clicked on a given song in the `SongList`, that song's video should appear in the `Queue`. Hint: you'll need some way to track which song has been clicked, and then have to get all of the details for that song down to the `Queue`. 
+- When `Add to Queue`is clicked on a given song in the `SongList`, that song's title and artist should appear underneath the `Queue`. You should be able to add a song more than once to the queue. Think about how the queue should be represented. 
+- Add the ability to delete a song from the `Queue`. Add a button to the `li` for each song. If that songs appears more than once, it should only delete the instance the user clicks to delete. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![alt text][advanced_image]
 
-## Learn More
+[advanced_image]: ./public/SnotifyAdvanced.gif "Core Deliverables"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Want some extra fun? 
+After we get through Forms labs and lecture, come back to this to practice those concepts. 
+- In `Navbar`, allow the user to enter a search term into a *fully controlled* form to search through the songs in `SongList`. 
+- In `Filter`, allow the user to select a genre and filter the songs in `SongList`. 
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+## Resources
+- [Styled Components](https://styled-components.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Notes on Future Labs
+- In this lab, we provided support like `onClick={null /* Put your click handler here */}`. We will not provide those kinds of guides in the future. You'll have to decide which element needs the event handler. 
