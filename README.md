@@ -5,6 +5,8 @@ In this app, you'll need to load songs from a json-server when a button in the N
 
 As with all applications, start first with what the feature is or what you want the user experience to be. Then determine what is needed to actually create that behavior in code. Start first with your end user and you'll build a better product. 
 
+*Important Note*: You are *NOT* expected to work on the `Filter` or `search` behavior during this lab. Those should be revisited after you work on the Forms labs and lecture. 
+
 Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
 
 ![alt text][core_image]
@@ -55,14 +57,12 @@ After cloning down the project:
 
 ## What You Already Have
 ### Components
-- `App`: the top of your application that renders `NavBar` and `MainContainer` components
-- `Navbar`: renders the app name, our button to get all of our info from the json-server and a search bar.
-- `MainContainer`: renders underneath the `Navbar` and contains a `Filter` component, `SongList` component and `Queue` component
-- `Filter`:
-- `SongList`:
-- `Queue`:
-- `SongItem`:
-
+- `App`: the top of your application that renders Navbar and the `MainContainer` component.
+- `MainContainer`: renders underneath the Navbar and contains the `SongList` component and `Queue` component.
+- `SongList`: Renders a `SongItem` component for each song object and contains a `Filter` component.
+- `Filter`: YOU DO NOT NEED TO WORK WITH THIS UNTIL AFTER FORMS.
+- `Queue`: Renders all the songs in the queue and an `iframe` for the current song video.
+- `SongItem`: Renders the information for a single song. Props are pre-populated but click handlers are not.
 
 
 ### Additional Files
@@ -72,10 +72,11 @@ After cloning down the project:
 ## Deliverables 
 ### Core Deliverables
 High level, you have to decide where state needs to live, create methods to update state, and pass those methods to where they eventually need to be invoked. Very little guidance is provided purposefully to make you think about where state should live. 
+- Draw out the component hierarchy so you can use it as a guide to plan where state should live and how to pass props.
 - Fetch all songs successfully from the backend when the `Get Songs` button is clicked
 - Render all songs in the `SongList`
-- When the heart is clicked on a given song in the `SongList`, toggle its favorite value. This should persist to the backend so when the page refreshes it is still (not) a favorite. Hint: remember a little thing called a `PATCH` request?
 - When `Liked` is clicked on a given song in the `SongList`, its like count should increase. This *DOES NOT* need to persist to the backend. 
+- When the heart is clicked on a given song in the `SongList`, toggle its favorite value. This should persist to the backend so when the page refreshes it is still (not) a favorite. Hint: remember a little thing called a `PATCH` request?
 
 ### Advanced Deliverables
 If you get through all of the Core Deliverables, try your hand at the Advanced ones. Check out the gif below for how it should look. 
