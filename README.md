@@ -5,6 +5,8 @@ In this app, you'll need to load songs from a json-server when a button in the N
 
 As with all applications, start first with what the feature is or what you want the user experience to be. Then determine what is needed to actually create that behavior in code. Start first with your end user and you'll build a better product. 
 
+Lastly, you will have to change code that you are not told explicitly to. Decide based on the feature/deliverable what code needs to be written or changed and then go do it! Play around with the code and test often. 
+
 *Important Note*: You are *NOT* expected to work on the `Filter` or `search` behavior during this lab. Those should be revisited after you work on the Forms labs and lecture. 
 
 Look out for `TODO`s in comments. Use the Core Deliverables listed below to guide you and find the `TODO`s if you're feeling stuck.
@@ -25,7 +27,7 @@ Look out for `TODO`s in comments. Use the Core Deliverables listed below to guid
 
 ## Setup
 After cloning down the project:
-- Run `git branch -b yourname` in your terminal to create your own branch
+- Run `git checkout -b yourname` in your terminal to create your own branch
 - Run `npm install` in your terminal
 - Run `npm start` and a JSON server will spin up a mock back-end API and you can access the data at `http://localhost:6001/songs`. Your react application will also start, on port `6002`. The response should contain an array of objects that are structured as follows:
 ```
