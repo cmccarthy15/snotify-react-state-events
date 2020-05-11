@@ -155,10 +155,18 @@
     {
       "id": 20,
       "title": "Freedom",
-      "artist": "Beyoncé (feat. Kendrick Lamar) ",
+      "artist": "Beyoncé (feat. Kendrick Lamar)",
       "url": "https://www.youtube.com/embed/bWtcsj6W_Vw",
       "genre": "Hip Hop",
       "favorite": false
+    },
+    {
+      "id": 21,
+      "title": "Callaíta",
+      "artist": "Bad Bunny",
+      "url": "https://www.youtube.com/embed/acEOASYioGY",
+      "genre": "Hip Hop",
+      "favorite": true
     }
   ]
 }
