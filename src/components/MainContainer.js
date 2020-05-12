@@ -5,7 +5,7 @@ import Queue from './Queue';
 const MainContainer = props => {
     return (
         <div className="simple-flex-row top">
-            <SongList /> {/** TODO: What props do I need? */}
+            <SongList songs={props.songs} updateSong={props.updateSong}/> 
             <Queue /> {/** TODO: What props do I need? */}
         </div>
     )
