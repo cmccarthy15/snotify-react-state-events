@@ -6,7 +6,7 @@ let API_ENDPOINT = `http://localhost:6001/songs`
 
 class App extends React.Component {
   state = {
-
+    /* TODO: What should go in state here?? Anything we don't want to have to fetch again for instance...? */
   }
   
   renderNav = () => {

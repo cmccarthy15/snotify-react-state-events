@@ -26,8 +26,7 @@ Look out for `TODO`s in comments. Use the Core Deliverables listed below to guid
 - ES6 Arrow functions and binding 
 
 ## Setup
-After cloning down the project:
-- Run `git checkout -b yourname` in your terminal to create your own branch
+After pulling down your cohort repo and navigating to the right folder:
 - Run `npm install` in your terminal
 - Run `npm start` and a JSON server will spin up a mock back-end API and you can access the data at `http://localhost:6001/songs`. Your react application will also start, on port `6002`. The response should contain an array of objects that are structured as follows:
 ```
@@ -71,6 +70,15 @@ After cloning down the project:
 - `db.json` stores the data for our json-server. Check it out to make sure you know the format of the data.  
 
 
+### Process Recommendations
+Feeling stuck? Try following the steps below for each deliverable:
+- Decide what element is where the event will occur. *This is where your `onClick` or other event will be, and where your method will be `invoked`*
+- Decide if something in state will need to be updated, and if so where. *This is where your event handler will need to be `defined`*
+- Define your event handler in the right location. Make sure it is a bound function. If you're not sure how to change state yet, just have it `console.log('in the ___ method')` or `console.log(this.state)`.
+- Pass that method down to the component where it will be invoked (see bullet point 1) as props and invoke it in the onClick. *Make sure you only see your console.log once the user interaction occurs*
+- Update your event handler to update state in the correct way! Maybe the method needs arguments, maybe not. That's for you to decide! 
+
+
 ## Deliverables 
 ### Core Deliverables
 High level, you have to decide where state needs to live, create methods to update state, and pass those methods to where they eventually need to be invoked. Very little guidance is provided purposefully to make you think about where state should live. 
@@ -82,8 +90,8 @@ High level, you have to decide where state needs to live, create methods to upda
 
 ### Advanced Deliverables
 If you get through all of the Core Deliverables, try your hand at the Advanced ones. Check out the gif below for how it should look. 
-- When `Play Now`is clicked on a given song in the `SongList`, that song's video should appear in the `Queue`. Hint: you'll need some way to track which song has been clicked, and then have to get all of the details for that song down to the `Queue`. 
-- When `Add to Queue`is clicked on a given song in the `SongList`, that song's title and artist should appear underneath the `Queue`. You should be able to add a song more than once to the queue. Think about how the queue should be represented. 
+- When `Play Now` is clicked on a given song in the `SongList`, that song's video should appear in the `Queue`. Hint: you'll need some way to track which song has been clicked, and then have to get all of the details for that song down to the `Queue`. 
+- When `Add to Queue` is clicked on a given song in the `SongList`, that song's title and artist should appear underneath the `Queue`. You should be able to add a song more than once to the queue. Think about how the queue should be represented. 
 - Add the ability to delete a song from the `Queue`. Add a button to the `li` for each song. If that songs appears more than once, it should only delete the instance the user clicks to delete. 
 
 ![alt text][advanced_image]
